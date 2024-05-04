@@ -80,10 +80,6 @@ header .container {
     padding: 22px 16px;
 }
 
-.carrinho > .market svg {
-    background-color: none;
-}
-
 .carrinho {
     display: flex;
     justify-content: center;
@@ -96,5 +92,10 @@ header .container {
 }
 
 .market:hover {
-    background-color: rgba(255, 255, 255, 0.05);
+    border-color: #5d5d5d;
+}
+
+.market:hover path {
+    fill: #5d5d5d;
+    fill-opacity: 1;
 }

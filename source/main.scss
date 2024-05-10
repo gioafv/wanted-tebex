@@ -1,10 +1,9 @@
-@use "config/reset";
-@use "config/variaveis.scss";
-@use "sass:math";
+@use 'config/reset';
+@use 'config/variaveis.scss';
+@use 'sass:math';
 
 @mixin alinhaItems() {
     display: flex;
-    justify-content: center;
     align-items: center;
 }
 
@@ -13,17 +12,17 @@
 }
 
 .container {
-    max-width: 1440px;
+    max-width: 1740px;
     width: 100%;
-    margin: 0 auto;
+    margin: auto;
 }
 
 header .container {
     @include alinhaItems();
     width: 100%;
-    padding: 16px 24px;
+    padding: 6px 24px;
     position: relative;
-    font-size: pixelParaEm(16px);
+    font-size: pixelParaEm(12px);
 }
 
 .container .store-menu {
@@ -36,8 +35,8 @@ header .container {
 }
 
 .priority-infos {
-    flex-grow: 1;
     justify-content: center;
+    margin-left: 560px;
 }
 
 .priority-infos a {
@@ -105,5 +104,76 @@ header .container {
 .coins {
     &:hover {
         background-color: variaveis.$corHovers;
+    }
+}
+
+.mobile-container {
+    display: none;
+}
+
+/* Style the navigation menu */
+.topnav {
+    overflow: hidden;
+    display: none;
+}
+
+/* Hide the links inside the navigation menu (except for logo/home) */
+.topnav #myLinks {
+    display: none;
+}
+
+/* Style navigation menu links */
+.topnav a {
+    // padding: 14px 16px;
+    text-decoration: none;
+    font-size: pixelParaEm(17px);
+    display: block;
+}
+
+/* Style the hamburger menu */
+.topnav a.icon {
+    display: block;
+    position: absolute;
+    right: 0;
+    top: 0;
+    background: none;
+}
+
+.active {
+    background-color: transparent;
+}
+
+@media screen and (max-width: variaveis.$mobile) {
+    header .container {
+        display: block;
+    }
+
+    .mobile-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .icon-nav {
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    #desktop {
+        display: none;
+    }
+
+    .topnav {
+        display: flex;
+    }
+
+    #myLinks a {
+        margin-top: 16px;
+    }
+}
+
+@media screen and (max-width: variaveis.$tablet) {
+    header .store-menu {
+        display: none;
     }
 }

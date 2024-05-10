@@ -1,5 +1,10 @@
 @use "config/reset";
 @use "config/variaveis.scss";
+@use "sass:math";
+
+@function pixelParaEm($alvoEmPixel, $contextoEmPixel: 16px) {
+    @return math.div($alvoEmPixel, $contextoEmPixel) + em;
+}
 
 .container {
     max-width: 1440px;

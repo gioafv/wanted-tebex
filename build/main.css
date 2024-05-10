@@ -3,8 +3,11 @@
   padding: 0;
   box-sizing: border-box;
   font-family: "Epilogue", sans-serif;
-  background-color: #0d0d0d;
   color: #fff;
+}
+
+body {
+  background-color: #0d0d0d;
 }
 
 .container {
@@ -13,12 +16,24 @@
   margin: auto;
 }
 
+.radial-background {
+  position: absolute; /* ou fixed */
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: -40%;
+  background: radial-gradient(50% 50% at 50% 50%, #546ef3 0%, rgba(0, 0, 0, 0) 100%);
+  opacity: 0.1;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
 header .container {
   display: flex;
   align-items: center;
   width: 100%;
   padding: 6px 24px;
-  position: relative;
   font-size: 0.75em;
 }
 
@@ -39,8 +54,15 @@ header .container {
 .priority-infos a {
   text-decoration: none;
   background: none;
-  padding: 16px;
+  padding: 16px 16px;
   font-size: 1em;
+  color: rgba(255, 255, 255, 0.5);
+}
+.priority-infos a:focus {
+  background-color: rgba(255, 255, 255, 0.05);
+  border-radius: 32px;
+  color: #fff;
+  font-weight: 500;
 }
 
 .priority-infos > div {
@@ -66,9 +88,10 @@ header .container {
   margin-left: 10px;
   text-decoration: none;
   border: 1px solid rgba(255, 255, 255, 0.05);
-  padding: 22px 40px;
+  padding: 16px 40px;
   border-radius: 32px;
   font-size: 1.1em;
+  color: rgba(255, 255, 255, 0.2);
 }
 
 .carrinho > .market {
@@ -76,7 +99,7 @@ header .container {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 22px 16px;
+  padding: 28px 16px;
 }
 .carrinho > .market .carrinho {
   display: flex;
@@ -84,8 +107,14 @@ header .container {
   padding: 0;
 }
 
-.login:hover {
+a.login {
   background-color: rgba(255, 255, 255, 0.05);
+  border: none;
+  color: #fff;
+  padding: 22px 32px;
+}
+a.login:hover {
+  background-color: rgba(255, 255, 255, 0.1);
 }
 
 .market:hover {
@@ -96,6 +125,11 @@ header .container {
   fill-opacity: 1;
 }
 
+.langs,
+.coins {
+  display: flex;
+  align-items: center;
+}
 .langs:hover,
 .coins:hover {
   background-color: rgba(255, 255, 255, 0.05);
@@ -130,10 +164,6 @@ header .container {
   right: 0;
   top: 0;
   background: none;
-}
-
-.active {
-  background-color: transparent;
 }
 
 @media screen and (max-width: 767px) {

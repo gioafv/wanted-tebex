@@ -1,10 +1,13 @@
-@use "variaveis";
+@use 'variaveis';
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: "Epilogue", sans-serif;
-    background-color: variaveis.$cordeFundo;
+    font-family: 'Epilogue', sans-serif;
     color: #fff;
+}
+
+body {
+    background-color: variaveis.$cordeFundo;
 }
